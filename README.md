@@ -4,9 +4,9 @@
 React-Flippy allows you to create flipping cards in React projects. 
 It can be used as controlled or uncontrolled component.
 
-![Vertical](https://raw.githubusercontent.com/sbayd/react-flippy/master/hover_flippy.gif)
+![Vertical](hover_flippy.gif)
 
-![Horizontal](https://raw.githubusercontent.com/sbayd/react-flippy/master/toggle_flippy.gif)
+![Horizontal](toggle_flippy.gif)
 
 
 [Live Demo](http://flippy.sbaydin.com "Live Demo")
