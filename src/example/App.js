@@ -26,7 +26,7 @@ const DefaultCardContents = ({ children }) => (
     >
       <img
         src={Rick}
-        style={{ width: '100%' }}
+        style={{ maxWidth: '100%', maxHeight: '100%' }}
       />
       RICK
       <span 
