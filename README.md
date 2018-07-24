@@ -28,7 +28,7 @@ render() {
     flipOnClick={true} // default false
     flipDirection="horizontal" // horizontal or vertical
     // and other props, which will go to div
-    style={{ width: '200px', height: '200px' }}
+    style={{ width: '200px', height: '200px' }} /// these are optional style, it is not necessary
   >
     <FrontSide
       style={{
@@ -78,4 +78,8 @@ render() {
 
 To run sample project, clone the repository and run yarn && yarn start
 To build project, clone repository and run yarn && yarn build
+
+### Credits
+
+Thanks to: https://github.com/fffilo/flipper I have used same methodology for style management. 
 
