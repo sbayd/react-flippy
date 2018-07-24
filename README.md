@@ -1,4 +1,4 @@
-###React-Flippy
+### React-Flippy
 
 
 React-Flippy allows you to create flipping cards in React projects. 
@@ -12,11 +12,11 @@ It can be used as controlled or uncontrolled component.
 [Live Demo](http://flippy.sbaydin.com "Live Demo")
 
 
-####How to install ?
+#### How to install ?
 
 `npm install react-flippy` or `yarn add react-flippy`
 
-####How to use ?
+#### How to use ?
 
 ```javascript
 import Flippy, { FrontSide, BackSide } from './../lib';
@@ -45,9 +45,9 @@ render() {
 }
 ```
 
-##API for Components
+## API for Components
 
-###Flippy
+### Flippy
 | Prop Name | Description   | Values  | Default   |
 | :------------: | :------------: | :------------: | :------------: |
 |  flipDirection | Direction of flip effect  |  horizontal/vertical | horizontal|
@@ -56,7 +56,7 @@ render() {
 | ...props   | Other props will be passed to container.  |   |   |
 
 
-###FrontSide
+### FrontSide
 
 | Prop Name | Description   | Values  | Default   |
 | :------------: | :------------: | :------------: | :------------: |
@@ -65,7 +65,7 @@ render() {
 | ...props   | Other props will be passed to card.  |   |   |
 
 
-###BackSide
+### BackSide
 
 | Prop Name | Description   | Values  | Default   |
 | :------------: | :------------: | :------------: | :------------: |
