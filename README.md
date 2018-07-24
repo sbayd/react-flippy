@@ -19,7 +19,7 @@ It can be used as controlled or uncontrolled component.
 #### How to use ?
 
 ```javascript
-import Flippy, { FrontSide, BackSide } from './../lib';
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
 // ... component class
 render() {
 	// .. return
