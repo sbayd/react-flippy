@@ -74,3 +74,8 @@ render() {
 | ...props   | Other props will be passed to card.  |   |   |
 
 
+#### Notes
+
+To run sample project, clone the repository and run yarn && yarn start
+To build project, clone repository and run yarn && yarn build
+
