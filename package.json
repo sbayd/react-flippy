@@ -1,23 +1,25 @@
 {
   "name": "react-flippy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/sbayd/react-flippy"
   },
-  "private": true,
-  "dependencies": {
+  "private": false,
+  "peerDependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-dom": "^16.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "build-example": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0"
