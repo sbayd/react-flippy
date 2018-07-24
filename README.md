@@ -23,12 +23,12 @@ import Flippy, { FrontSide, BackSide } from './../lib';
 // ... component class
 render() {
 	// .. return
-	<Flippy
-		flipOnHover={false} // default false
-		flipOnClick={true} // default false
-		flipDirection="horizontal" // horizontal or vertical
-		// and other props, which will go to div
-		style={{ width: '200px', height: '200px' }}
+  <Flippy
+    flipOnHover={false} // default false
+    flipOnClick={true} // default false
+    flipDirection="horizontal" // horizontal or vertical
+    // and other props, which will go to div
+    style={{ width: '200px', height: '200px' }}
   >
     <FrontSide
       style={{
