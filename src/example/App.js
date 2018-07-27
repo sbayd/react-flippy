@@ -33,7 +33,8 @@ const DefaultCardContents = ({ children }) => (
         style={{
           fontSize:'12px',
           position: 'absolute',
-          bottom: '10px'
+          bottom: '10px',
+          width: '100%'
         }}>
         {children}<br />
         (FRONT SIDE)
@@ -52,7 +53,8 @@ const DefaultCardContents = ({ children }) => (
         style={{
           fontSize:'12px',
           position: 'absolute',
-          bottom: '10px'
+          bottom: '10px',
+          width: '100%'
         }}>
         {children}<br />
         (BACK SIDE)
