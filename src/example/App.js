@@ -86,7 +86,32 @@ const FlippyOnClick = ({ flipDirection = 'vertical' }) => (
   </Flippy>
 );
 
+const ControlledFlippy = ({ isFlipped })  => (
+  <Flippy
+    flipDirection="vertical"
+    isFlipped={isFlipped}
+    style={FlippyStyle}
+  >
+    <DefaultCardContents>
+      I flip vertically for every 3sec. I am controlling by a upper scope.
+    </DefaultCardContents>
+  </Flippy>
+);
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFlipped: false
+    };
+
+    setInterval(() => {
+      this.setState({
+        isFlipped: !this.state.isFlipped
+      });
+    }, 3000);
+  }
+
   render() {
     return (
       <div className="App">
@@ -94,6 +119,7 @@ class App extends Component {
             <Flippy
               ref={(r) => this.flippyHorizontal = r}
               flipOnClick={false}
+              isFlipped={true}
               style={FlippyStyle}
             >
             <DefaultCardContents>
@@ -116,6 +142,9 @@ class App extends Component {
           </Flippy>
           <FlippyOnHover />
           <FlippyOnClick />
+          <ControlledFlippy
+            isFlipped={this.state.isFlipped}
+          /> 
         </div>
       </div>
     );

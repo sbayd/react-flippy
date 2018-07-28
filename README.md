@@ -27,6 +27,8 @@ render() {
     flipOnHover={false} // default false
     flipOnClick={true} // default false
     flipDirection="horizontal" // horizontal or vertical
+    ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle()
+    // if you pass isFlipped prop component will be controlled component.
     // and other props, which will go to div
     style={{ width: '200px', height: '200px' }} /// these are optional style, it is not necessary
   >
@@ -53,8 +55,10 @@ render() {
 |  flipDirection | Direction of flip effect  |  horizontal/vertical | horizontal|
 |  flipOnHover | Should card flip on mouse hover  |  true/false  |  false  |
 |  flipOnClick   | Should card click on mouse click/touch  | true/false   | true  |
+|  isFlipped   |  If you pass isFilipped prop component will be "controlled react component" and flipOnHover, flipOnClick functions will not work. You must handle this functionalities with your own logic.   | undefined/true/false   | undefined  |
 | ...props   | Other props will be passed to container.  |   |   |
 
+Note: Flippy component has a function named "toggle" in its reference.
 
 ### FrontSide
 
