@@ -119,7 +119,6 @@ class App extends Component {
             <Flippy
               ref={(r) => this.flippyHorizontal = r}
               flipOnClick={false}
-              isFlipped={true}
               style={FlippyStyle}
             >
             <DefaultCardContents>
