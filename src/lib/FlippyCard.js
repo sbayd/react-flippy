@@ -16,7 +16,7 @@ class FlippyCard extends React.Component {
   }
 }
 
-export const FrontSide = ({ isFlipped, style, ...props, animationDuration }) => (
+export const FrontSide = ({ isFlipped, style, animationDuration, ...props }) => (
   <FlippyCard
     {...props}
     style={

@@ -83,6 +83,10 @@ Note: Flippy component has a function named "toggle" in its reference.
 To run sample project, clone the repository and run yarn && yarn start
 To build project, clone repository and run yarn && yarn build
 
+
+### Changelog
+#### 0.1.5 New build system targeting es5 modules. 
+
 ### Credits
 
 Thanks to: https://github.com/fffilo/flipper I have used same methodology for style management. 
