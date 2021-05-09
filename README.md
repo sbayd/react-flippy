@@ -85,6 +85,11 @@ To build project, clone repository and run yarn && yarn build
 
 
 ### Changelog
+#### 1.0.0 (10 May, 2021)
+- React updated to 17.0.2
+- Component converted to react-hook
+- Dependencies upgraded
+- Fixed bugs
 #### 0.1.5 New build system targeting es5 modules. 
 
 ### Credits

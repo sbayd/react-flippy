@@ -92,7 +92,7 @@
 }
 
 .flippy-cardContainer.isActive:not(.istouchdevice) .flippy-front,
-.fflippy-cardContainer.isActive.istouchdevice .flippy-front
+.flippy-cardContainer.isActive.istouchdevice .flippy-front
 {
     -webkit-transform: rotateY(180deg);
        -moz-transform: rotateY(180deg);

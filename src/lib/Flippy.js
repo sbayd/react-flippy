@@ -1,109 +1,95 @@
-import React from 'react';
-import FlippyFooter from './FlippyFooter';
+import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import './styles.css';
 
-export default class Flippy extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isFlipped: false,
-      isTouchDevice: false
-    };
-  }
+const Flippy = React.forwardRef(({
+  isFlipped: _isFlipped,
+  className,
+  flipDirection,
+  style,
+  children,
+  flipOnHover,
+  flipOnClick,
+  onClick,
+  onTouchStart,
+  onMouseEnter,
+  onMouseLeave,
+  ...rest
+}, ref) => {
+  const simpleFlag = useRef({ isTouchDevice: false });
+  const [isTouchDevice, setTouchDevice] = useState(false);
+  const [isFlipped, setFlipped] = useState(false);
+  const toggle = () => setFlipped(!isFlipped);
 
-  static getDerivedStateFromProps(props, state) {
-    return {
-      ...state,
-      isFlipped: typeof props.isFlipped === 'boolean' ? props.isFlipped : state.isFlipped
-    };
-  }
+  useImperativeHandle(ref, () => ({ toggle }));
 
-  toggle = () => {
-    this.setState({
-      isFlipped: !this.state.isFlipped
-    });
+  const handleTouchStart = event => {
+    if (!isTouchDevice) {
+      simpleFlag.current.isTouchDevice = true;
+      setTouchDevice(true);
+    }
+    onTouchStart(event);
   }
+  
+  const handleMouseEnter = event => {
+    if (flipOnHover && !simpleFlag.current.isTouchDevice) { setFlipped(true); }
+    onMouseEnter(event);
+  };
 
-  handleFooterDotClick = (newCardIndex, event) => {
-    this.setState({
-      isFlipped: newCardIndex === 0
-    });
-  }
+  const handleMouseLeave = event => {
+    if (flipOnHover && !simpleFlag.current.isTouchDevice) { setFlipped(false); }
+    onMouseLeave(event);
+  };
 
-  handleHoverOn = (event) => {
-    this.setState({
-      isFlipped: true
-    });
-    this.props.onMouseEnter(event);
-  }
+  const handleClick = event => {
+    switch(true) {
+      case flipOnHover && !simpleFlag.current.isTouchDevice:
+      case !flipOnClick && !flipOnHover:
+        break;
+      default:
+        setFlipped(!isFlipped);
+        break;
+    }
+    onClick(event);
+  };
 
-  handleTouchStart = (event) => {
-    this.setState({
-      isFlipped: true,
-      isTouchDevice: true
-    });
-    this.props.onTouchStart(event);
-  }
+  useEffect(() => {
+    if (typeof _isFlipped === 'boolean' && _isFlipped !== isFlipped) {
+      setFlipped(_isFlipped);
+    }
+  }, [_isFlipped]);
 
-  handleTouchEnd = (event) => {
-    this.setState({
-      isFlipped: false
-    });
-    this.props.onTouchEnd(event);
-  }
-
-  handleHoverOff = (event) => {
-    this.setState({
-      isFlipped: false
-    });
-    this.props.onMouseLeave(event);
-  }
-
-  render() {
-    const { children, style, flipDirection, flipOnHover, flipOnClick } = this.props;
-    const { isFlipped, activeCardIndex, isTouchDevice } = this.state;
-    const methods = !!flipOnHover ? {
-      onMouseEnter: this.handleHoverOn,
-      onMouseLeave: this.handleHoverOff,
-      onTouchStart: this.handleTouchStart,
-      onTouchEnd: this.handleTouchEnd
-    } : flipOnClick ? {
-      onClick: this.toggle
-    } : {};
-    return (
-      <div
-        className="flippy-container"
-        style={{
-          ...style
-        }}
-        {...methods}
-      >
+  return (
+    <div
+      {...rest}
+      className={`flippy-container ${className || ''}`}
+      style={{
+        ...style
+      }}
+      onTouchStart={handleTouchStart}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
+    >
       <div className={`flippy-cardContainer-wrapper ${flipDirection}`}>
         <div
           className={`flippy-cardContainer ${isFlipped ? 'isActive' : ''} ${isTouchDevice ? 'istouchdevice' : ''}`}
         >
           {children}
         </div>
-          {this.props.showNavigation && <FlippyFooter
-            onDotClick={this.handleFooterDotClick}
-            activeCardIndex={activeCardIndex}
-            cards={this.props.children}
-          />}
-        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+});
+
+export default Flippy;
 
 Flippy.defaultProps = {
-  showNavigation: false,
   flipDirection: 'horizontal',
   flipOnHover: false,
   flipOnClick: true,
-  usePrettyStyle: true,
+  isFlipped: false,
   onMouseEnter: () => {},
   onMouseLeave: () => {},
   onTouchStart: () => {},
-  onTouchEnd: () => {},
   onClick: () => {}
 };
