@@ -90,9 +90,3 @@ To build project, clone repository and run yarn && yarn build
 ### Credits
 
 Thanks to: https://github.com/fffilo/flipper I have used same methodology for style management. 
-
-
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
-
-[![Beerpay](https://beerpay.io/sbayd/react-flippy/badge.svg?style=beer-square)](https://beerpay.io/sbayd/react-flippy)  [![Beerpay](https://beerpay.io/sbayd/react-flippy/make-wish.svg?style=flat-square)](https://beerpay.io/sbayd/react-flippy?focus=wish)
