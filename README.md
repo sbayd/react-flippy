@@ -21,7 +21,6 @@ It can be used as controlled or uncontrolled component.
 ```javascript
 import { useRef } from 'react';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
-import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
 function Sample() {
   const ref = useRef();
