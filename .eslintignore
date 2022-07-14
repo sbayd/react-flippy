@@ -1,0 +1,5 @@
+dist/*.js
+build/**/*.js
+craco.config.ts
+rollup.config.js
+node_modules
