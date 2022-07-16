@@ -9,7 +9,7 @@ import type { HTMLAttributes } from "react";
 import "./styles.css";
 
 export interface FlippyProps extends HTMLAttributes<HTMLDivElement> {
-  flipDirection?: string;
+  flipDirection?: "vertical" | "horizontal";
   isFlipped?: boolean;
   flipOnHover?: boolean;
   flipOnClick?: boolean;
