@@ -1,4 +1,5 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import { createElement } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 
 export interface FlippyCardProps extends HTMLAttributes<HTMLDivElement> {
   cardType?: "back" | "front";
@@ -15,7 +16,7 @@ function FlippyCard({
   children,
   ...rest
 }: FlippyCardProps) {
-  return React.createElement(
+  return createElement(
     elementType || "div",
     {
       className: `flippy-card flippy-${cardType} ${className || ""}`,

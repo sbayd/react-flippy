@@ -1,4 +1,7 @@
+dist/*.ts
+dist/**/*.ts
 dist/*.js
+dist/**/*.js
 build/**/*.js
 craco.config.ts
 rollup.config.js

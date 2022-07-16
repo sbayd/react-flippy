@@ -1,10 +1,11 @@
-import React, {
-  HTMLAttributes,
+import {
+  forwardRef,
   useEffect,
   useImperativeHandle,
   useRef,
   useState,
 } from "react";
+import type { HTMLAttributes } from "react";
 import "./styles.css";
 
 export interface FlippyProps extends HTMLAttributes<HTMLDivElement> {
@@ -14,7 +15,7 @@ export interface FlippyProps extends HTMLAttributes<HTMLDivElement> {
   flipOnClick?: boolean;
 }
 
-const Flippy = React.forwardRef(
+const Flippy = forwardRef(
   (
     {
       className,

@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 import "./styles.css";
 export interface FlippyProps extends HTMLAttributes<HTMLDivElement> {
     flipDirection?: string;
@@ -6,5 +6,5 @@ export interface FlippyProps extends HTMLAttributes<HTMLDivElement> {
     flipOnHover?: boolean;
     flipOnClick?: boolean;
 }
-declare const Flippy: React.ForwardRefExoticComponent<FlippyProps & React.RefAttributes<unknown>>;
+declare const Flippy: import("react").ForwardRefExoticComponent<FlippyProps & import("react").RefAttributes<unknown>>;
 export default Flippy;
