@@ -6,55 +6,49 @@ import autoprefixer from 'autoprefixer';
 
 import visualizer from 'rollup-plugin-visualizer';
 import { terser } from 'rollup-plugin-terser';
+import packageJson from './package.json';
+import dts from 'rollup-plugin-dts';
 
-const MODE = [
-  {
-    fomart: 'cjs'
-  },
-  {
-    fomart: 'esm'
-  },
-  {
-    fomart: 'umd'
-  }
-];
 
-const configs = MODE.map((m) => {
-
-  return {
-    input: [
-      './src/lib/index.ts'
-    ],
-    output: {
-      name: "react-flippy",
-      format: m.fomart,
-      sourcemap: true,
-      file: `dist/index.${m.fomart}.js`,
-      format: m.fomart,
-      exports: "named"
+export default [{
+  input: './src/lib/index.ts',
+  output: [
+    {
+        file: packageJson.main,
+        format: 'cjs',
+        sourcemap: true,
+        name: 'react-flippy'
     },
-    plugins: [
-      resolve(),
-      commonjs(),
-      typescript({
-        tsconfig: './tsconfig.build.json',
-        declaration: true,
-        declarationDir: 'dist',
-      }),
-      terser(),
-      visualizer({
-        filename: 'bundle-analysis.html',
-        open: true,
-      }),
-      styles({
-        postcss: {
-          plugins: [
-              autoprefixer()
-          ]
-        }
-      })
-    ],
-  };
-})
-
-export default configs;
+    {
+        file: packageJson.module,
+        format: 'esm',
+        sourcemap: true
+    }
+  ],
+  plugins: [
+    resolve(),
+    commonjs(),
+    typescript({
+      tsconfig: './tsconfig.build.json',
+      declaration: true,
+      declarationDir: './types' 
+    }),
+    terser(),
+    visualizer({
+      filename: 'bundle-analysis.html',
+      open: true,
+    }),
+    styles({
+      postcss: {
+        plugins: [
+            autoprefixer()
+        ]
+      }
+    })
+  ],
+}, {
+  input: 'dist/esm/types/index.d.ts',
+  output: [{ file: 'dist/index.d.ts', format: "esm" }],
+  external: [/\.css$/],
+  plugins: [dts()],
+}];

@@ -35,7 +35,7 @@
     "@nicolo-ribaudo/chokidar-2" "2.1.8-no-fsevents"
     "chokidar" "^3.4.0"
 
-"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.0", "@babel/code-frame@^7.18.6", "@babel/code-frame@^7.8.3":
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.0", "@babel/code-frame@^7.16.7", "@babel/code-frame@^7.18.6", "@babel/code-frame@^7.8.3":
   "integrity" "sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q=="
   "resolved" "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.18.6.tgz"
   "version" "7.18.6"
@@ -4907,9 +4907,9 @@
     "unpipe" "~1.0.0"
 
 "find-cache-dir@^3.3.1":
-  "integrity" "sha512-t2GDMt3oGC/v+BMwzmllWDuJF/xcDtE5j/fCGbqDD7OLuJkj0cfh1YSA5VKPvwMeLFLNDBkwOKZ2X85jGLVftQ=="
-  "resolved" "https://registry.npmjs.org/find-cache-dir/-/find-cache-dir-3.3.1.tgz"
-  "version" "3.3.1"
+  "integrity" "sha512-wXZV5emFEjrridIgED11OoUKLxiYjAcqot/NJdAkOhlJ+vGzwhOAfcG5OX1jP+S0PcjEn8bdMJv+g2jwQ3Onig=="
+  "resolved" "https://registry.npmjs.org/find-cache-dir/-/find-cache-dir-3.3.2.tgz"
+  "version" "3.3.2"
   dependencies:
     "commondir" "^1.0.1"
     "make-dir" "^3.0.2"
@@ -6841,6 +6841,13 @@
   "version" "0.25.7"
   dependencies:
     "sourcemap-codec" "^1.4.4"
+
+"magic-string@^0.26.1":
+  "integrity" "sha512-NzzlXpclt5zAbmo6h6jNc8zl2gNRGHvmsZW4IvZhTC4W7k4OlLP+S5YLussa/r3ixNT66KOQfNORlXHSOy/X4A=="
+  "resolved" "https://registry.npmjs.org/magic-string/-/magic-string-0.26.2.tgz"
+  "version" "0.26.2"
+  dependencies:
+    "sourcemap-codec" "^1.4.8"
 
 "make-dir@^2.1.0":
   "integrity" "sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA=="
@@ -9028,6 +9035,15 @@
   dependencies:
     "glob" "^7.1.3"
 
+"rollup-plugin-dts@^4.2.2":
+  "integrity" "sha512-A3g6Rogyko/PXeKoUlkjxkP++8UDVpgA7C+Tdl77Xj4fgEaIjPSnxRmR53EzvoYy97VMVwLAOcWJudaVAuxneQ=="
+  "resolved" "https://registry.npmjs.org/rollup-plugin-dts/-/rollup-plugin-dts-4.2.2.tgz"
+  "version" "4.2.2"
+  dependencies:
+    "magic-string" "^0.26.1"
+  optionalDependencies:
+    "@babel/code-frame" "^7.16.7"
+
 "rollup-plugin-styles@^3.14.1":
   "integrity" "sha512-0JodP26O3WZ8320X3sBn5S2SOPv9Al2tLyOmLco+H2UqLjbmycM9KWGypLjcDuIEWwa0oLYiXpViMmO2yyeqIA=="
   "resolved" "https://registry.npmjs.org/rollup-plugin-styles/-/rollup-plugin-styles-3.14.1.tgz"
@@ -9072,7 +9088,7 @@
     "source-map" "^0.7.3"
     "yargs" "^17.5.1"
 
-"rollup@^1.20.0 || ^2.0.0", "rollup@^1.20.0||^2.0.0", "rollup@^2.0.0", "rollup@^2.14.0", "rollup@^2.2.0", "rollup@^2.42.0", "rollup@^2.43.1", "rollup@^2.68.0":
+"rollup@^1.20.0 || ^2.0.0", "rollup@^1.20.0||^2.0.0", "rollup@^2.0.0", "rollup@^2.14.0", "rollup@^2.2.0", "rollup@^2.42.0", "rollup@^2.43.1", "rollup@^2.55", "rollup@^2.68.0":
   "integrity" "sha512-9jwRIEY1jOzKLj3nsY/yot41r19ITdQrhs+q3ggNWhr9TQgduHqANvPpS32RNpzGklJu3G1AJfvlZLi/6wFgWA=="
   "resolved" "https://registry.npmjs.org/rollup/-/rollup-2.76.0.tgz"
   "version" "2.76.0"
@@ -9512,7 +9528,7 @@
   "resolved" "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz"
   "version" "0.6.1"
 
-"sourcemap-codec@^1.4.4":
+"sourcemap-codec@^1.4.4", "sourcemap-codec@^1.4.8":
   "integrity" "sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA=="
   "resolved" "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
   "version" "1.4.8"
@@ -10117,7 +10133,7 @@
   dependencies:
     "is-typedarray" "^1.0.0"
 
-"typescript@^3.2.1 || ^4", "typescript@^4.7.4", "typescript@>= 2.7", "typescript@>=2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3", "typescript@>=3.7.0":
+"typescript@^3.2.1 || ^4", "typescript@^4.1", "typescript@^4.7.4", "typescript@>= 2.7", "typescript@>=2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3", "typescript@>=3.7.0":
   "integrity" "sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.7.4.tgz"
   "version" "4.7.4"

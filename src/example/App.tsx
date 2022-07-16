@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import Flippy, { FrontSide, BackSide } from "../lib";
 import Rick from "./rick.png";
 import "./App.css";
