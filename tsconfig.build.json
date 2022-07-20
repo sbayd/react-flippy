@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "declaration": true,
+  "declarationDir": "types",
+  "emitDeclarationOnly": true,
+  "outDir": "dist",
+  "exclude": [
+    "node_modules",
+    "build",
+    "src/example",
+    "dist",
+    "jest",
+  ]
+}
