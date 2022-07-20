@@ -1,8 +1,9 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import Flippy, { FrontSide, BackSide } from "../lib";
-import Rick from "./rick.png";
 import "./App.css";
 import { FlippyProps } from "../lib/Flippy";
+
+const Rick = require("./rick.png");
 
 const FlippyStyle: FlippyProps["style"] = {
   width: "200px",
@@ -71,7 +72,11 @@ function DefaultCardContents({ children }: { children: ReactNode }) {
   );
 }
 
-function FlippyOnHover({ flipDirection = "vertical" }) {
+function FlippyOnHover({
+  flipDirection = "vertical",
+}: {
+  flipDirection?: FlippyProps["flipDirection"];
+}) {
   return (
     <Flippy flipOnHover flipDirection={flipDirection} style={FlippyStyle}>
       <DefaultCardContents>
@@ -81,7 +86,11 @@ function FlippyOnHover({ flipDirection = "vertical" }) {
   );
 }
 
-function FlippyOnClick({ flipDirection = "vertical" }) {
+function FlippyOnClick({
+  flipDirection = "vertical",
+}: {
+  flipDirection?: FlippyProps["flipDirection"];
+}) {
   return (
     <Flippy flipOnClick flipDirection={flipDirection} style={FlippyStyle}>
       <DefaultCardContents>
@@ -91,7 +100,7 @@ function FlippyOnClick({ flipDirection = "vertical" }) {
   );
 }
 
-function ControlledFlippy({ isFlipped }: { isFlipped: boolean }) {
+function ControlledFlippy({ isFlipped }: { isFlipped?: boolean }) {
   return (
     <Flippy flipDirection="vertical" isFlipped={isFlipped} style={FlippyStyle}>
       <DefaultCardContents>
