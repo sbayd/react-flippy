@@ -49,6 +49,13 @@ export default [{
 }, {
   input: 'dist/esm/types/lib/index.d.ts',
   output: [{ file: 'dist/index.d.ts', format: "esm" }],
-  external: [/\.css$/],
+  external: [
+    ...Object.keys(packageJson.dependencies || {}),
+    ...Object.keys(packageJson.peerDependencies || {}),
+    /\.css$/,
+  ],
+  globals: {
+    react: 'React',
+  },
   plugins: [dts()],
 }];
